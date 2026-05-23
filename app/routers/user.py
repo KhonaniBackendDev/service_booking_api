@@ -4,6 +4,7 @@ from sqlalchemy.exc import IntegrityError
 from ..database import get_db
 from ..utils import pass_hash
 from .. import models, schemas
+from app.logger import logger
 
 router = APIRouter(prefix="/users", tags=["Users"])
 

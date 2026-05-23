@@ -23,7 +23,9 @@ htmlcov/
 .DS_Store
 Thumbs.db
 
+app.log
 *.log
+
 
 alembic/versions/__pycache__/
 

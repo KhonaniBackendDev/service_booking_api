@@ -7,6 +7,7 @@ from ..database import get_db
 from ..utils import verify
 from ..oauth2 import create_token
 from .. import models, schemas
+from app.logger import logger
 
 router = APIRouter(prefix="/login", tags=["Authentication"])
 
@@ -19,6 +20,7 @@ def login_user(
     user_credentials: OAuth2PasswordRequestForm = Depends(),
     db: Session = Depends(get_db),
 ):
+
     # Get user
     user = db.execute(
         select(models.User).where(models.User.email == user_credentials.username)

@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from ..database import get_db
 from .. import models
 from app.config import settings
+from app.logger import logger
 
 client = stripe.StripeClient(settings.stripe_secret_key)
 
